@@ -1,0 +1,19 @@
+services:
+  decksite:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: decksite
+    restart: unless-stopped
+    ports:
+      - "${PORT:-5000}:5000"
+    environment:
+      - FLASK_ENV=production
+    volumes:
+      - ./config.json:/app/backend/config.json
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/api/status')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

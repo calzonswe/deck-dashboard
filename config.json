@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Example App 1",
+    "url": "http://example.com/app1"
+  },
+  {
+    "name": "Example App 2",
+    "url": "http://example.com/app2"
+  },
+  {
+    "name": "Home Assistant",
+    "url": "http://homeassistant.local:8123",
+    "host": "raspi-1"
+  },
+  {
+    "name": "Plex",
+    "url": "http://plex.local:32400",
+    "host": "raspi-1"
+  },
+  {
+    "name": "Grafana",
+    "url": "http://grafana.local:3000",
+    "host": "server-2"
+  }
+]
